@@ -1,0 +1,17 @@
+html {
+  @include box-sizing(border-box);
+  height: 100%;
+}
+*,
+*:after,
+*:before {
+  @include box-sizing(inherit);
+}
+body {
+  font-family: $fuente_principal;
+  height: 100%;
+  background-color: $gris;
+}
+img {
+  max-width: 100%;
+}
