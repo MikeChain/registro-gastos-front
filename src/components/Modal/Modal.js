@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Modal.scss';
 
 
-export const Modal = ({ show, handleClose, children }) => {
+export const Modal = ({ show, title, handleClose, children }) => {
 
   const click = () => {
     handleClose();
@@ -16,7 +16,13 @@ export const Modal = ({ show, handleClose, children }) => {
     <>
       <div className='overlay' onClick={click} />
       <div className='modal'>
-        <span aria-hidden={true} onClick={click} >X Cerrar</span>
+        <div className='modal__title'>
+          <h1>{title}</h1>
+          <span aria-hidden={true} onClick={click} >X Cerrar</span>
+        </div>
+
+        <hr />
+
         {
           children
         }
