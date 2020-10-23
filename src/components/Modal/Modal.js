@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDom from 'react-dom';
 import PropTypes from 'prop-types';
 import './Modal.scss';
 
@@ -9,7 +10,7 @@ export const Modal = ({ show, handleClose, children }) => {
     handleClose();
   }
 
-  return (
+  return ReactDom.createPortal(
     show &&
 
     <>
@@ -20,7 +21,8 @@ export const Modal = ({ show, handleClose, children }) => {
           children
         }
       </div>
-    </>
+    </>,
+    document.getElementById('portal')
   )
 }
 
