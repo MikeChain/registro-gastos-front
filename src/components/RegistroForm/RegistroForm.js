@@ -20,8 +20,16 @@ export const RegistroForm = () => {
 
   const { type, account, category, subcategory, date, time, concept, ammount } = values;
 
+  const submit = e => {
+    e.preventDefault();
+
+    // TODO: enviar datos al backend
+
+    reset()
+  }
+
   return (
-    <form className='registro-form'>
+    <form className='registro-form' onSubmit={submit}>
       <div className='registro-form__one'>
         <label htmlFor='type'>
           Tipo de Movimiento
