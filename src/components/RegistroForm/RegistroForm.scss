@@ -1,0 +1,20 @@
+@import "../../styles/app";
+
+.registro-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+
+  & > div {
+    margin-bottom: 1rem;
+  }
+
+  input,
+  select {
+    width: 100%;
+  }
+
+  &__one {
+    grid-column: 1 / 3;
+  }
+}

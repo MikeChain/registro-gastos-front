@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Modal } from './components/Modal';
+import { RegistroForm } from './components/RegistroForm';
 import './index.scss';
 
 function App() {
 
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const close = () => {
     setIsModalOpen(false);
@@ -14,15 +15,15 @@ function App() {
     <div className="App">
 
       <button onClick={() => setIsModalOpen(true)}>
-        Abrir Modal
+        Nuevo Registro
       </button>
 
       <Modal
         show={isModalOpen}
         handleClose={close}
-        title='Hola Mundo'
+        title='Nuevo Registro'
       >
-        <h2>Cosas</h2>
+        <RegistroForm />
       </Modal>
 
     </div>
