@@ -17,12 +17,13 @@
   }
 }
 
-@mixin boton($color) {
+@mixin boton($color, $text: $blanco) {
   background-color: $color;
   padding: 0.5rem 1rem;
   display: block;
   text-align: center;
-  color: $blanco;
+  border: none;
+  color: $text;
   text-decoration: none;
   transition: background-color 0.3s ease;
   &:hover {

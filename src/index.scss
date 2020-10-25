@@ -2,7 +2,6 @@
 
 html {
   @include box-sizing(border-box);
-  height: 100%;
 }
 *,
 *:after,
@@ -16,4 +15,19 @@ body {
 }
 img {
   max-width: 100%;
+}
+
+button {
+  @include boton($secundario, $text-oscuro);
+}
+
+button.outline {
+  color: $text-claro;
+  background-color: transparent;
+  border: 1px dashed $text-claro;
+
+  &:hover {
+    font-weight: bold;
+    border: 2px solid $text-claro;
+  }
 }

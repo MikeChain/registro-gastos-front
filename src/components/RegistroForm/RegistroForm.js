@@ -80,10 +80,13 @@ export const RegistroForm = () => {
 
       <button type='submit'>Guardar</button>
 
-      <button onClick={e => {
-        e.preventDefault();
-        reset();
-      }}>Limpiar</button>
+      <button
+        className='outline'
+        onClick={e => {
+          e.preventDefault();
+          reset();
+        }}
+      >Limpiar</button>
     </form>
   )
 }
