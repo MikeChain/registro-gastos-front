@@ -8,7 +8,7 @@ import { useToast } from '../../hooks/useToast';
 
 export const Toast = ({ position, autoDelete, dismissTime }) => {
 
-  const [toastList] = useToast();
+  const [toastList, , deleteToast] = useToast();
   const [list, setList] = useState(toastList);
 
   useEffect(() => {
@@ -26,15 +26,6 @@ export const Toast = ({ position, autoDelete, dismissTime }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toastList, autoDelete, dismissTime, list]);
-
-  const deleteToast = id => {
-    const listItemIndex = list.findIndex(e => e.id === id);
-    const toastListItem = toastList.findIndex(e => e.id === id);
-
-    list.splice(listItemIndex, 1);
-    toastList.splice(toastListItem, 1);
-    setList([...list]);
-  }
 
   const getTypeIcon = (type) => {
     switch (type) {

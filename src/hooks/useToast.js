@@ -13,5 +13,12 @@ export const useToast = () => {
     }]);
   }
 
-  return [list, handleNewToast];
+  const deleteToast = id => {
+    const listItemIndex = list.findIndex(e => e.id === id);
+
+    list.splice(listItemIndex, 1);
+    setList([...list]);
+  }
+
+  return [list, handleNewToast, deleteToast];
 }
