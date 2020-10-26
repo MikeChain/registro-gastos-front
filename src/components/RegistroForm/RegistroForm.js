@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ToastContext } from '../../context/ToastContext';
 import { useForm } from '../../hooks/useForm';
+import { ToastCheck } from '../../utils/toastConstants';
 import './RegistroForm.scss';
 
 const now = new Date()
@@ -20,12 +22,21 @@ export const RegistroForm = () => {
 
   const { type, account, category, subcategory, date, time, concept, ammount } = values;
 
+  const { list, setList } = useContext(ToastContext);
+
   const submit = e => {
     e.preventDefault();
 
     // TODO: enviar datos al backend
 
-    reset()
+    setList([...list, {
+      type: ToastCheck,
+      title: 'Ok',
+      description: 'Registro guardado',
+      id: new Date().getTime()
+    }]);
+
+    reset();
   }
 
   return (
