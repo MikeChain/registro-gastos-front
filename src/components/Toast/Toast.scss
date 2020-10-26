@@ -1,0 +1,104 @@
+@import "./../../styles/app.scss";
+
+.notification-container {
+  font-size: 1.1rem;
+  position: fixed;
+}
+
+.top-right {
+  top: 1rem;
+  right: 1rem;
+  transition: transofrm 0.6s ease-in-out;
+  animation: toast-in-right 0.7s;
+}
+
+.bottom-right {
+  bottom: 1rem;
+  right: 1rem;
+  transition: transform 0.6s ease-in-out;
+  animation: toast-in-right 0.7s;
+}
+
+.top-left {
+  top: 1rem;
+  left: 1rem;
+  transition: transform 0.6s ease-in;
+  animation: toast-in-left 0.7s;
+}
+
+.bottom-left {
+  bottom: 1rem;
+  left: 1rem;
+  transition: transform 0.6s ease-in;
+  animation: toast-in-left 0.7s;
+}
+
+.notification {
+  transition: 0.3s ease;
+  pointer-events: auto;
+  overflow: hidden;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  max-height: 10rem;
+  opacity: 0.9;
+  color: $text-claro;
+
+  &:hover {
+    box-shadow: 0 0 1rem #fff;
+    cursor: pointer;
+  }
+
+  &__title {
+    p {
+      font-weight: bold;
+      text-align: left;
+      margin: 0;
+    }
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  &__body {
+    margin: 0;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &.check {
+    background-color: $success;
+  }
+
+  &.error {
+    background-color: $error;
+  }
+
+  &.info {
+    background-color: $info;
+  }
+
+  &.warning {
+    background-color: $warning;
+  }
+}
+
+@keyframes toast-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes toast-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
