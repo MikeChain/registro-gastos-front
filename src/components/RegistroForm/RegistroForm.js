@@ -28,6 +28,7 @@ export const RegistroForm = () => {
     e.preventDefault();
 
     // TODO: enviar datos al backend
+    // console.log(new Date(date + ' ' + time));
 
     newToast({
       type: ToastCheck,
