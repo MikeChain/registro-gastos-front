@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from './components/Modal';
+import { Navbar } from './components/Navbar';
 import { RegistroForm } from './components/RegistroForm';
 import { Toast } from './components/Toast';
 import { ToastProvider } from './context/ToastContext';
@@ -15,6 +16,8 @@ const App = () => {
 
   return (
     <ToastProvider>
+
+      <Navbar />
 
       <button onClick={() => setIsModalOpen(true)}>
         Nuevo Registro

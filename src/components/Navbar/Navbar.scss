@@ -1,0 +1,21 @@
+@import "../../styles/app";
+
+.navbar {
+  display: flex;
+  width: 100%;
+  height: auto;
+  background-color: $alternativo;
+  padding: 1rem;
+  justify-content: flex-end;
+
+  &__menu{
+    color: $text-claro;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      margin: 0 0.5rem;
+    }
+  }
+}
