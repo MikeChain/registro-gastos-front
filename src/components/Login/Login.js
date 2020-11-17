@@ -7,8 +7,32 @@ export const Login = () => {
 
   const { email, pass } = values;
 
-  const submit = e => {
+  const submit = async (e) => {
     e.preventDefault()
+
+    const url = 'http://localhost:8080/login';
+
+    const data = {
+      email, password: pass
+    }
+
+    const params = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }
+
+    const resp = await fetch(url, params);
+
+    if (resp.ok) {
+      const body = await resp.json();
+      console.log(body.token)
+    } else {
+      resp.text().then(console.log)
+    }
+
   }
 
   return (
