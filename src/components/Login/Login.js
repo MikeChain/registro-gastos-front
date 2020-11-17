@@ -62,6 +62,6 @@ export const Login = () => {
 }
 
 const initValues = {
-  'email': '',
-  'pass': '',
+  'email': 'miguelangel_cadena@outlook.com',
+  'pass': 'mi.ca.2020!',
 }
