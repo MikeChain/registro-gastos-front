@@ -1,1 +1,29 @@
 @import './../../styles/app.scss';
+
+.form-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  width: 50vw;
+  justify-content: space-evenly;
+  background-color: $alternativo;
+
+  &__title {
+    margin: 0;
+    text-align: center;
+    color: $text-claro;
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+}
