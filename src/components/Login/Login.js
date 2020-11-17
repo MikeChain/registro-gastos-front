@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 import { useForm } from '../../hooks/useForm';
+import { useToast } from '../../hooks/useToast';
+import { ToastError } from '../../utils/toastConstants';
 import './Login.scss';
 
 export const Login = () => {
@@ -7,8 +10,11 @@ export const Login = () => {
 
   const { email, pass } = values;
 
+  const [, newToast] = useToast();
+  const { user, setUser } = useContext(AuthContext);
+
   const submit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const url = 'http://localhost:8080/login';
 
@@ -28,9 +34,18 @@ export const Login = () => {
 
     if (resp.ok) {
       const body = await resp.json();
-      console.log(body.token)
+      setUser({
+        ...user,
+        token: body.token,
+        logged: true
+      })
     } else {
-      resp.text().then(console.log)
+      const body = await resp.text();
+      newToast({
+        type: ToastError,
+        title: 'Problemas!',
+        description: body
+      });
     }
 
   }
