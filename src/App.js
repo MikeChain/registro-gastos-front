@@ -1,35 +1,15 @@
-import React, { useState } from 'react';
-import { Modal } from './components/Modal';
-import { Navbar } from './components/Navbar';
-import { RegistroForm } from './components/RegistroForm';
+import React from 'react';
+import { Header } from './components/Header';
 import { Toast } from './components/Toast';
 import { ToastProvider } from './context/ToastContext';
 import './index.scss';
 
 const App = () => {
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const close = () => {
-    setIsModalOpen(false);
-  }
-
   return (
     <ToastProvider>
 
-      <Navbar />
-
-      <button onClick={() => setIsModalOpen(true)}>
-        Nuevo Registro
-      </button>
-
-      <Modal
-        show={isModalOpen}
-        handleClose={close}
-        title='Nuevo Registro'
-      >
-        <RegistroForm />
-      </Modal>
+      <Header />
 
       <Toast
         position='bottom-right'

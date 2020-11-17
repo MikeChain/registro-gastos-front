@@ -7,6 +7,15 @@
   background-color: $alternativo;
   padding: 1rem;
   justify-content: flex-end;
+  position: absolute;
+
+  &.abierto {
+    top: 100%;
+  }
+
+  &.cerrado {
+    top: -200%;
+  }
 
   &__menu{
     color: $text-claro;
