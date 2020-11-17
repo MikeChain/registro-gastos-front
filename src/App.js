@@ -1,17 +1,16 @@
 import React from 'react';
-// import { Header } from './components/Header';
-import { Login } from './components/Login';
 import { Toast } from './components/Toast';
 import { AuthProvider } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
 import './index.scss';
+import { AppRouter } from './routers/AppRouter';
 
 const App = () => {
 
   return (
     <ToastProvider>
       <AuthProvider>
-        <Login />
+        <AppRouter />
 
         <Toast
           position='bottom-right'
