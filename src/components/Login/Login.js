@@ -39,6 +39,8 @@ export const Login = () => {
         token: body.token,
         logged: true
       })
+      localStorage.setItem('expires', body.expires)
+      localStorage.setItem('token', body.token)
     } else {
       const body = await resp.text();
       newToast({

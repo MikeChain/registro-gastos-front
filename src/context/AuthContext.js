@@ -4,8 +4,8 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({
-    token: '',
-    logged: false
+    token: localStorage.getItem('token') || '',
+    logged: new Date() < new Date(localStorage.getItem('expires'))
   });
 
   return (
