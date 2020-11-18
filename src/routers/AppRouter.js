@@ -4,7 +4,7 @@ import {
   Switch
 } from 'react-router-dom'
 import { Login } from '../components/Login';
-import { Header } from '../components/Header';
+import { Dashboard } from '../components/Dashboard';
 import { AuthContext } from '../context/AuthContext';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
@@ -23,7 +23,7 @@ export const AppRouter = () => {
           />
           <PrivateRoute
             isAuthenticated={user.logged}
-            path="/" component={Header}
+            path="/" component={Dashboard}
           />
 
         </Switch>
